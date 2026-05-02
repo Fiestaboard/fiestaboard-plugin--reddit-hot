@@ -1,0 +1,92 @@
+{
+  "id": "reddit_hot",
+  "name": "Reddit Hot",
+  "version": "0.1.0",
+  "description": "Display the top hot post title and score from any subreddit.",
+  "author": "FiestaBoard Team",
+  "icon": "message-circle",
+  "category": "data",
+  "repository": "https://github.com/Fiestaboard/fiestaboard-plugin--reddit-hot",
+  "documentation": "README.md",
+  "min_refresh_seconds": 300,
+  "settings_schema": {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "title": "Enabled",
+        "default": false
+      },
+      "subreddit": {
+        "type": "string",
+        "title": "Subreddit",
+        "description": "Subreddit name without the r/ prefix (e.g. programming).",
+        "default": "programming"
+      },
+      "post_index": {
+        "type": "integer",
+        "title": "Post Position",
+        "description": "Which post to display (1 = top hot post).",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 25
+      },
+      "refresh_seconds": {
+        "type": "integer",
+        "title": "Refresh Interval (seconds)",
+        "description": "How often to fetch the hot post. Respect Reddit rate limits (>=300s recommended).",
+        "default": 300,
+        "minimum": 120
+      }
+    },
+    "required": [
+      "subreddit"
+    ]
+  },
+  "variables": {
+    "groups": {
+      "post": {
+        "label": "Post"
+      }
+    },
+    "simple": {
+      "title": {
+        "description": "Post title (truncated to fit board)",
+        "type": "string",
+        "max_length": 22,
+        "group": "post",
+        "example": "Python 4.0 released"
+      },
+      "score": {
+        "description": "Post score (upvotes minus downvotes)",
+        "type": "integer",
+        "max_length": 7,
+        "group": "post",
+        "example": "45321"
+      },
+      "comments": {
+        "description": "Number of comments",
+        "type": "integer",
+        "max_length": 6,
+        "group": "post",
+        "example": "1023"
+      },
+      "subreddit": {
+        "description": "Subreddit name",
+        "type": "string",
+        "max_length": 20,
+        "group": "post",
+        "example": "programming"
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "src": "docs/board-display.png",
+      "alt": "Reddit Hot displayed on a Vestaboard",
+      "caption": "Example board output using the default template",
+      "primary": true
+    }
+  ],
+  "api_docs": "https://www.reddit.com/dev/api/"
+}
