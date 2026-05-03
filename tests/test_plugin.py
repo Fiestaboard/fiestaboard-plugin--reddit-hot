@@ -101,6 +101,18 @@ class TestRedditHotPlugin:
         for field in ("id", "name", "version"):
             assert field in m
 
+    def test_manifest_has_demo_config(self):
+        manifest_path = Path(__file__).parent.parent / "manifest.json"
+        with open(manifest_path) as f:
+            m = json.load(f)
+        assert "demo" in m, "manifest must have a 'demo' key"
+        demo = m["demo"]
+        assert "template" in demo, "demo must have a 'template'"
+        assert isinstance(demo["template"], list), "demo.template must be a list"
+        assert len(demo["template"]) == 6, "demo.template must have 6 lines"
+        assert "line_metadata" in demo, "demo must have 'line_metadata'"
+        assert len(demo["line_metadata"]) == 6, "demo.line_metadata must have 6 entries"
+
     @patch("plugins.reddit_hot.requests.get")
     def test_fetch_data_success(self, mock_get, configured_plugin):
         mock_response = Mock()
