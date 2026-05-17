@@ -1,7 +1,7 @@
 {
   "id": "reddit_hot",
   "name": "Reddit Hot",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Display the top hot post title and score from any subreddit.",
   "author": "FiestaBoard Team",
   "icon": "message-circle",
