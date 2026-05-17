@@ -1,7 +1,7 @@
 {
   "id": "reddit_hot",
   "name": "Reddit Hot",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Display the top hot post title and score from any subreddit.",
   "author": "FiestaBoard Team",
   "icon": "message-circle",
@@ -90,23 +90,64 @@
   ],
   "api_docs": "https://www.reddit.com/dev/api/",
   "demo": {
-    "name": "Reddit Hot Demo",
-    "device_type": "flagship",
-    "template": [
-      "HOT ON REDDIT TODAY",
-      "r/{{reddit_hot.subreddit}}",
-      "{{reddit_hot.title}}",
-      "",
-      "SCORE {{reddit_hot.score}}",
-      "CMNTS {{reddit_hot.comments}}"
-    ],
-    "line_metadata": [
-      {"alignment": "center", "wrap": false},
-      {"alignment": "left", "wrap": false},
-      {"alignment": "left", "wrap": false},
-      {"alignment": "left", "wrap": false},
-      {"alignment": "left", "wrap": false},
-      {"alignment": "left", "wrap": false}
-    ]
+    "flagship": {
+      "name": "Reddit Hot Demo",
+      "template": [
+        "HOT ON REDDIT TODAY",
+        "r/{{reddit_hot.subreddit}}",
+        "{{reddit_hot.title}}",
+        "",
+        "SCORE {{reddit_hot.score}}",
+        "CMNTS {{reddit_hot.comments}}"
+      ],
+      "line_metadata": [
+        {
+          "alignment": "center",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        }
+      ]
+    },
+    "note": {
+      "name": "Reddit Hot (Note)",
+      "template": [
+        "r/{{reddit_hot.subreddit}}",
+        "{{reddit_hot.title}}",
+        "SC {{reddit_hot.score}}"
+      ],
+      "line_metadata": [
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": true
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        }
+      ]
+    }
   }
 }
