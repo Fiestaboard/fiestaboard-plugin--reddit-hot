@@ -44,7 +44,7 @@ class RedditHotPlugin(PluginBase):
                 return PluginResult(available=False, error="No posts found")
 
             post = posts[post_index]["data"]
-            title = str(post.get("title", ""))[:22]
+            title = str(post.get("title", ""))
             score = int(post.get("score", 0))
             comments = int(post.get("num_comments", 0))
 

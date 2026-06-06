@@ -129,6 +129,8 @@ class TestRedditHotPlugin:
         assert "score" in result.data, "missing variable: score"
         assert "comments" in result.data, "missing variable: comments"
         assert "subreddit" in result.data, "missing variable: subreddit"
+        # Title must not be pre-truncated; truncation belongs in templates.
+        assert result.data["title"] == "Python 4.0 released with new features"
 
     @patch("plugins.reddit_hot.requests.get")
     def test_fetch_data_network_error(self, mock_get, configured_plugin):
