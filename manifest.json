@@ -51,9 +51,8 @@
     },
     "simple": {
       "title": {
-        "description": "Post title (truncated to fit board)",
+        "description": "Post title (full length; truncate in template if needed)",
         "type": "string",
-        "max_length": 22,
         "group": "post",
         "example": "Python 4.0 released"
       },
