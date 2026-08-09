@@ -87,6 +87,28 @@
       "primary": true
     }
   ],
+  "teaser": "R/PROGRAMMING",
+  "previews": [
+    {
+      "device_type": "flagship",
+      "rows": [
+        " HOT ON REDDIT TODAY",
+        "r/programming",
+        "Python 4.0 released",
+        "",
+        "SCORE 45321",
+        "CMNTS 1023"
+      ]
+    },
+    {
+      "device_type": "note",
+      "rows": [
+        "{64}REDDIT HOT",
+        "PYTHON 4.0",
+        "SCORE 45321"
+      ]
+    }
+  ],
   "api_docs": "https://www.reddit.com/dev/api/",
   "demo": {
     "flagship": {
